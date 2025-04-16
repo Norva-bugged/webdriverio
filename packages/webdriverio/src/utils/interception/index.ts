@@ -207,7 +207,7 @@ export default class WebDriverInterception {
             if (responseData.body) {
                 this.#responseBodies.set(request.request.request, responseData.body)
             }
-            const bodyToSend = responseData.body?.type === 'string' ? responseData.body.value : responseData.body
+            const bodyToSend = responseData.body
             return this.#browser.networkProvideResponse({
                 request: request.request.request,
                 ...responseData,
